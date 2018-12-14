@@ -1,44 +1,37 @@
-page 50102 "CSD Seminar List"
+page 50102"CSD Seminar List"
 // CSD1.00 - 2018-01-01 - D. E. Veloper
-// Chapter 5 - Lab 2-6
+// Chapter 5 - Lab 3-6
 {
+    Caption='Seminar List';
     PageType = List;
-    ApplicationArea = All;
     SourceTable = "CSD Seminar";
-    Caption = 'Seminar List';
     Editable = false;
     CardPageId = 50101;
     UsageCategory = Lists;
 
     layout
     {
-        area(Content)
+        area(content)
         {
             repeater(Group)
             {
                 field("No."; "No.")
                 {
-                    ApplicationArea = All;
                 }
                 field(Name; Name)
                 {
-                    ApplicationArea = All;
                 }
-                field("Seminar Duration"; "Seminar Duration")
+                field("Seminar Duration";"Seminar Duration")
                 {
-                    ApplicationArea = All;
                 }
                 field("Seminar Price"; "Seminar Price")
                 {
-                    ApplicationArea = All;
                 }
                 field("Minimum Participants"; "Minimum Participants")
                 {
-                    ApplicationArea = All;
                 }
                 field("Maximum Participants"; "Maximum Participants")
                 {
-                    ApplicationArea = All;
                 }
             }
         }
@@ -46,13 +39,12 @@ page 50102 "CSD Seminar List"
         {
             systempart("Links"; Links)
             {
-
             }
             systempart("Notes"; Notes)
             {
-
             }
         }
+
     }
 
     actions
@@ -63,9 +55,8 @@ page 50102 "CSD Seminar List"
             {
                 action("Co&mments")
                 {
-                    //RunObject=page "CSD Seminar Comment Sheet";
-                    //RunPageLink = "Table Name"= const(Seminar),
-                    // "No."=field("No.");
+                    RunObject=page"CSD Seminar Comment Sheet";
+                    RunPageLink = "Table Name"=const(Seminar),"No."=field("No.");
                     Image = Comment;
                     Promoted = true;
                     PromotedIsBig = true;
